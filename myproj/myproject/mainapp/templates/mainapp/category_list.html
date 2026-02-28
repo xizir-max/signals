@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="{% url 'mainapp:index' %}">Назад на главную</a>
+<span> | </span>
+<a href="{% url 'mainapp:category_create' %}">Новая Категория</a>
+<hr>
+{% for c in object_list %}
+    <a href="{% url 'mainapp:category_detail' c.pk %}">
+        {{ c.name }}
+    </a>
+    <span> | </span>
+    <a href="{% url 'mainapp:category_delete' c.pk %}">X</a>
+    <br>
+{% endfor %}
+</body>
+</html>

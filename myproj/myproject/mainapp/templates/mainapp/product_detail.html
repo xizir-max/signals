@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <a href="{% url 'mainapp:index' %}">Главная</a>
+    <span>--></span>
+    <a href="{% url 'mainapp:category_list' %}">Список категорий</a>
+    <span>--></span>
+    <a href="{% url 'mainapp:category_detail' object.category.id %}">
+        {{ object.category.name }}
+    </a>
+    <hr>
+    <h1>Название: {{ object.name }}</h1>
+    <h2>Категория: {{ object.category.name }}</h2>
+</body>
+</html>

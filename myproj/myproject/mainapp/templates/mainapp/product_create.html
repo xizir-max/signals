@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание продукта</title>
+</head>
+<body>
+    <a href="{% url 'mainapp:category_list' %}">Назад в категории</a>
+    <hr>
+    <h2>Создание нового продукта</h2>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Создать продукт">
+    </form>
+</body>
+</html>

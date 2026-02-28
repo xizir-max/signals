@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="{% url 'mainapp:index' %}">Главная</a>
+<span>--></span>
+<a href="{% url 'mainapp:category_list' %}">Список категорий</a>
+<hr>
+<h2>Категория: {{ object.name }}</h2>
+<a href="{% url 'mainapp:product_create' %}">Добавить продукт</a>
+<hr>
+{% for p in object.products.all %}
+    <a href="{% url 'mainapp:product_detail' object.id p.id %}">
+        {{ p.name }}
+    </a>
+    <a href="{% url 'mainapp:product_delete' p.id %}">X</a>
+    <br>
+{% endfor %}
+</body>
+</html>
